@@ -8,9 +8,19 @@ from diagrams.generic.network import Firewall
 def main():
     """Simple Internet Client Access Proxy Server
     """
+
+    graph_attr = {
+        "fontsize": "45",
+        "bgcolor": "#FFFFFF"
+    }
+
+    node_attr = {
+        "fontsize": "15",
+    }
+
     try: 
         print('[INFO] job is starting...')
-        with Diagram("Public Service By Reverse Proxy Server", show=False, direction="LR"):
+        with Diagram("Public Service By Reverse Proxy Server", show=False, graph_attr=graph_attr, node_attr=node_attr, direction="LR"):
             outside       = Client("Internet") 
             firewall      = Firewall("Firewall")
             nat_server    = Server("NAT")
